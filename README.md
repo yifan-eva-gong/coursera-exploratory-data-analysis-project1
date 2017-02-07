@@ -1,3 +1,3 @@
-# coursera-getting-and-cleaning-data-course-project
+# coursera-exploratory-data-analysis-project1
 
-Coursera Data Science Specialization Course 3: Getting and Cleaning Data Course Project
+Coursera Exploratory Data Analysis Course Project 1
