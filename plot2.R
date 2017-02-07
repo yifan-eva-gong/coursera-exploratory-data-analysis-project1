@@ -1,0 +1,10 @@
+library(dplyr)
+raw <- read.csv("~/ExData_Plotting1/My_code/household_power_consumption.txt", sep=";")
+raw$Dat <- as.Date(raw$Date,"%d/%m/%Y")
+sub <- filter(raw, Dat=="2007-02-01" | Dat=="2007-02-02")
+sub$Global_active_power <- as.numeric(levels(sub$Global_active_power))[sub$Global_active_power]
+datetime <- paste(as.Date(sub$Dat), sub$Time)
+sub$Datetime <- as.POSIXct(datetime)
+png(filename="~/ExData_Plotting1/My_code/plot2.png",width=480,height=480)
+plot(sub$Global_active_power~sub$Datetime, type="l",ylab="Global Active Power (kilowatts)", xlab="")
+dev.off()
